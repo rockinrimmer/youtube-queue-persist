@@ -36,6 +36,8 @@ pnpm zip          # Package extension and source for signing/distribution
 
 `pnpm-lock.yaml` records dependency versions. Use `pnpm install --frozen-lockfile` for a reproducible install. `pnpm-workspace.yaml` allows the esbuild install script and the optional macOS file watcher install script.
 
+GitHub Actions runs `pnpm test` on every push, using Node.js 22 and the pnpm version pinned in `package.json`.
+
 WXT's development browser uses a separate profile. To use your regular Firefox, build and load the manifest manually as above. On WSL, run the build in WSL and load the resulting manifest in Windows Firefox. You can also install dependencies and run WXT directly in Windows with Node.js 22 or later.
 
 There are optional `dev:chrome` and `build:chrome` scripts, but Firefox is the primary target.
