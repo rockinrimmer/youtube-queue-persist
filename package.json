@@ -14,6 +14,7 @@
     "build": "wxt build -b firefox",
     "build:chrome": "wxt build -b chrome",
     "zip": "wxt zip -b firefox",
+    "zip:chrome": "wxt zip -b chrome",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "postinstall": "wxt prepare"

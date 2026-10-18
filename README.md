@@ -40,7 +40,15 @@ GitHub Actions runs `pnpm test` on every push, using Node.js 22 and the pnpm ver
 
 WXT's development browser uses a separate profile. To use your regular Firefox, build and load the manifest manually as above. On WSL, run the build in WSL and load the resulting manifest in Windows Firefox. You can also install dependencies and run WXT directly in Windows with Node.js 22 or later.
 
-There are optional `dev:chrome` and `build:chrome` scripts, but Firefox is the primary target.
+There are also `dev:chrome`, `build:chrome` and `zip:chrome` scripts, but Firefox is the primary target.
+
+## Releases
+
+Creating and pushing a new tag runs the release workflow. It installs dependencies from the lockfile, checks types and runs the tests before building either browser package. A failed check or build stops the workflow before a release is published.
+
+The GitHub release includes the Firefox ZIP, Chrome ZIP and Firefox source ZIP, with generated release notes. These are unsigned packages; the workflow does not sign the Firefox add-on or submit either package to a browser store.
+
+Update the version in `package.json` before creating a release tag, for example `v0.1.3`. WXT uses that version in the browser manifests and ZIP filenames. Updating an existing tag does not create a release.
 
 ## Checks completed
 
