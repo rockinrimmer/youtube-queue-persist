@@ -2,7 +2,7 @@
   "name": "youtube-queue-persist",
   "description": "Save and restore YouTube's native queue in Firefox.",
   "private": true,
-  "version": "0.1.2",
+  "version": "1.0.0",
   "type": "module",
   "packageManager": "pnpm@10.29.3",
   "engines": {
