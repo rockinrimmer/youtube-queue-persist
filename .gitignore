@@ -1,0 +1,7 @@
+node_modules/
+.wxt/
+.output/
+work/
+output/
+.playwright-cli/
+*.local
