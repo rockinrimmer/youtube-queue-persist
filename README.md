@@ -1,6 +1,6 @@
 # YouTube Queue Persist
 
-A Firefox extension prototype built with [WXT](https://wxt.dev/) and TypeScript. It saves YouTube's **native desktop queue** and rebuilds it when you want to continue watching.
+A Firefox extension built with [WXT](https://wxt.dev/) and TypeScript. It saves YouTube's **native desktop queue** and rebuilds it when you want to continue watching.
 
 Use YouTube's existing **Add to queue** controls. The extension keeps an ordered local copy, the selected video and its playback position. Open the extension popup and select **Restore on YouTube** after closing and reopening a tab.
 
@@ -36,7 +36,7 @@ npm run zip          # Package extension and source for signing/distribution
 
 WXT's development browser uses a separate profile. To use your regular Firefox, build and load the manifest manually as above. On WSL, run the build in WSL and load the resulting manifest in Windows Firefox. You can also install dependencies and run WXT directly in Windows with Node.js 22 or later.
 
-There are optional `dev:chrome` and `build:chrome` scripts, but Firefox is the prototype's primary target.
+There are optional `dev:chrome` and `build:chrome` scripts, but Firefox is the primary target.
 
 ## Checks completed
 
@@ -63,7 +63,7 @@ The add-on still needs a check in your signed-in Firefox profile. Full browser r
 
 YouTube does not offer a public native-queue API. The adapter reads the page's `ytd-playlist-panel-renderer` data and player methods, and dispatches the same internal command type as YouTube's **Add to queue**. The current temporary queue identifier starts with `TLPQ`. YouTube can change any of these details without notice.
 
-The prototype supports the desktop site at `www.youtube.com`. It does not synchronise with mobile queues, YouTube Music or Firefox Sync. Live streams, unavailable/private videos, ads that block playback, long queues with unloaded continuation pages and queues above 1,000 entries may prevent capture or restoration. Existing snapshots remain available when capture is incomplete. Playback progress can lag by about ten seconds if the browser crashes.
+The extension supports the desktop site at `www.youtube.com`. It does not synchronise with mobile queues, YouTube Music or Firefox Sync. Live streams, unavailable/private videos, ads that block playback, long queues with unloaded continuation pages and queues above 1,000 entries may prevent capture or restoration. Existing snapshots remain available when capture is incomplete. Playback progress can lag by about ten seconds if the browser crashes.
 
 Queue data is local to this Firefox profile. Removing the extension can remove its saved data. It is not a cloud backup.
 
