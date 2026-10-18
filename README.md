@@ -57,7 +57,7 @@ The add-on still needs a check in your signed-in Firefox profile. Full browser r
 - Restores only when you press the popup button. It first opens the saved video on a fresh watch page in the active YouTube tab, or opens a new watch tab if you are elsewhere. It waits for that page to load before rebuilding the queue. This also supports restoring from YouTube's homepage or while a different playlist is open.
 - Keeps the saved copy if restoration fails. A failed restore is excluded from automatic saves until the queue's order or contents change.
 - With multiple YouTube tabs, the most recent queue-list change takes ownership of the saved copy. Passive playback in another tab cannot overwrite it. All tabs share the same saved queue; separate accounts and per-tab histories are not supported.
-- **Restore previous copy** restores the previous queue and swaps it into the current slot after success. **Forget saved copies** removes both snapshots, with a second click to confirm. Further queue activity can create a new saved copy.
+- **Restore previous copy** restores the previous queue and swaps it into the current slot after success. **Clear saved copies** removes both snapshots, with a second click to confirm. Further queue activity can create a new saved copy.
 
 ## Limitations
 

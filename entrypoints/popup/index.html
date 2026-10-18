@@ -3,40 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
     <title>YouTube Queue Persist</title>
   </head>
   <body>
     <main>
       <header>
-        <div class="brand"><img src="/icon.svg" alt="" width="28" height="28" /><span>QUEUE PERSIST</span></div>
-        <span class="badge">PROTOTYPE</span>
+        <div class="brand"><img src="/icons/queue-red.svg" alt="" width="24" height="24" /><span>YouTube Queue Persist</span></div>
       </header>
       <section class="intro">
-        <p class="eyebrow"><span class="dot"></span> SAVED ON THIS DEVICE</p>
-        <h1>Your queue, <em>kept.</em></h1>
-        <p id="summary" class="summary">Checking your saved queue…</p>
+        <div class="section-title"><h1>Saved queue</h1><span id="summary" class="count">Loading…</span></div>
+        <p id="save-state" class="save-state" hidden>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3.5 8 3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <span id="saved-time"></span>
+        </p>
       </section>
       <section id="saved" hidden aria-label="Saved queue">
-        <div class="list-heading"><h2>Ready when you are</h2><span id="saved-time"></span></div>
         <ol id="videos" aria-label="Saved videos"></ol>
-        <div class="resume"><span class="resume-icon" aria-hidden="true">↳</span><p id="resume"></p></div>
+        <div class="resume"><span class="resume-label">Resume from</span><p id="resume"></p><span class="paused">Starts paused</span></div>
       </section>
       <section id="empty" hidden class="empty">
-        <span class="empty-symbol" aria-hidden="true">≡</span>
-        <h2>Start a queue on YouTube</h2>
-        <p>Use YouTube’s usual “Add to queue” button. We’ll keep a copy here as you go.</p>
-        <button id="open-youtube" class="secondary">Open YouTube <span aria-hidden="true">↗</span></button>
+        <svg class="empty-symbol" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M6 10h23M6 20h17M6 30h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m28 23 8 5-8 5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <h2>No videos saved</h2>
+        <p>Use <strong>Add to queue</strong> on YouTube.<br />Your videos will be saved here automatically.</p>
+        <button id="open-youtube" class="secondary">Open YouTube <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
       </section>
+      <p id="status" role="status" aria-live="polite"></p>
       <div id="actions" hidden>
-        <button id="restore" class="primary">Restore on YouTube <span aria-hidden="true">↗</span></button>
-        <p class="restore-note">Opens your saved video in the active YouTube tab.<br />Opens a new tab if you’re browsing elsewhere.</p>
+        <button id="restore" class="primary"><svg class="restore-icon" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4v5h5M4.4 8.6A6 6 0 1 1 4 13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Restore on YouTube</span><svg class="button-arrow" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
+        <p class="restore-note">Replaces the queue in your active YouTube tab.</p>
         <div class="utilities">
           <button id="previous" class="text-button" hidden>Restore previous copy</button>
-          <button id="forget" class="text-button">Forget saved copies</button>
+          <button id="forget" class="text-button">Clear saved copies</button>
         </div>
       </div>
-      <p id="status" role="status" aria-live="polite"></p>
-      <footer><span class="dot"></span> Automatic local saves <span class="footer-end">NATIVE YOUTUBE QUEUE</span></footer>
     </main>
     <script type="module" src="./main.ts"></script>
   </body>

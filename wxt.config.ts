@@ -1,5 +1,12 @@
 import { defineConfig } from 'wxt';
 
+const icons = {
+  16: 'icons/queue-red.svg',
+  32: 'icons/queue-red.svg',
+  48: 'icons/queue-red.svg',
+  96: 'icons/queue-red.svg',
+};
+
 export default defineConfig({
   manifestVersion: 3,
   zip: {
@@ -11,7 +18,8 @@ export default defineConfig({
     description: 'Keep your native YouTube queue after closing a tab or Firefox.',
     permissions: ['storage'],
     host_permissions: ['https://www.youtube.com/*'],
-    icons: { 48: '/icon.svg', 96: '/icon.svg' },
+    icons,
+    action: { default_icon: icons },
     browser_specific_settings: {
       gecko: {
         id: 'youtube-queue-persist@local.prototype',
