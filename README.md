@@ -6,11 +6,11 @@ Use YouTube's existing **Add to queue** controls. The extension keeps an ordered
 
 ## Try it in Firefox
 
-Requires Node.js 22 or later and Firefox 142 or later.
+Requires Node.js 22 or later, pnpm 10.29.3 and Firefox 142 or later. The pnpm version is pinned in `package.json`; if you use Corepack, run `corepack enable` once to make pnpm available.
 
 ```sh
-npm install
-npm run build
+pnpm install
+pnpm build
 ```
 
 1. Open `about:debugging#/runtime/this-firefox` in Firefox.
@@ -22,17 +22,19 @@ npm run build
 
 On Windows, the manifest is at `D:\Documents\Programming\youtube-queue-persist\.output\firefox-mv3\manifest.json` if you use the current checkout location.
 
-**Temporary add-ons are removed when Firefox exits.** This is enough to test closing and reopening tabs. To keep the extension installed across browser restarts, it needs Mozilla signing, including for private, unlisted distribution. For development, Firefox Developer Edition or Nightly can also install an unsigned XPI with signature enforcement disabled. The ZIP produced by `npm run zip` is an unsigned package, not an installable signed release for ordinary Firefox. No signing or publishing has been performed.
+**Temporary add-ons are removed when Firefox exits.** This is enough to test closing and reopening tabs. To keep the extension installed across browser restarts, it needs Mozilla signing, including for private, unlisted distribution. For development, Firefox Developer Edition or Nightly can also install an unsigned XPI with signature enforcement disabled. The ZIP produced by `pnpm zip` is an unsigned package, not an installable signed release for ordinary Firefox. No signing or publishing has been performed.
 
 ## Development
 
 ```sh
-npm run dev          # WXT development mode, launches Firefox with the extension
-npm run typecheck
-npm test
-npm run build        # Firefox MV3 production build
-npm run zip          # Package extension and source for signing/distribution
+pnpm dev          # WXT development mode, launches Firefox with the extension
+pnpm typecheck
+pnpm test
+pnpm build        # Firefox MV3 production build
+pnpm zip          # Package extension and source for signing/distribution
 ```
+
+`pnpm-lock.yaml` records dependency versions. Use `pnpm install --frozen-lockfile` for a reproducible install. `pnpm-workspace.yaml` allows the esbuild install script and the optional macOS file watcher install script.
 
 WXT's development browser uses a separate profile. To use your regular Firefox, build and load the manifest manually as above. On WSL, run the build in WSL and load the resulting manifest in Windows Firefox. You can also install dependencies and run WXT directly in Windows with Node.js 22 or later.
 

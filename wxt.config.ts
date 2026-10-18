@@ -10,7 +10,7 @@ const icons = {
 export default defineConfig({
   manifestVersion: 3,
   zip: {
-    includeSources: ['entrypoints/**', 'lib/**', 'public/**', '*.ts', '*.json', '*.md'],
+    includeSources: ['entrypoints/**', 'lib/**', 'public/**', '*.ts', '*.json', '*.md', 'pnpm-*.yaml'],
     excludeSources: ['work/**', 'output/**'],
   },
   manifest: {
