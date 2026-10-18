@@ -2,13 +2,13 @@
   <img src="public/icons/queue-red.svg" alt="YouTube Queue Persist logo" width="160" height="160">
 </p>
 
+<h1 align="center">YouTube Queue Persist</h1>
+
 <p align="center">
   <a href="https://addons.mozilla.org/en-GB/firefox/addon/youtube-queue-persist/">
     <img src="https://labels.tahoe.be/firefox_download_dark.svg" alt="Download for Firefox" width="168" height="60">
   </a>
 </p>
-
-# YouTube Queue Persist
 
 A Firefox extension built with [WXT](https://wxt.dev/) and TypeScript. It saves YouTube's **native desktop queue** and rebuilds it when you want to continue watching.
 
